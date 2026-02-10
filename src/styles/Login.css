@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+
+.login-container {
+  position: fixed; 
+  inset: 0;
+
+  background-image: url("../assets/bekground.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.login-container h1 {
+  font-size: 120px;
+  font-weight: 800;
+  margin-bottom: 80px;
+}
+
+.login-container p {
+  letter-spacing: 5px;
+  margin-top: -70px;
+  margin-bottom: 80px;
+}
+
+
+.login-box {
+  width: 420px;
+  padding: 40px;
+
+  border: 3px solid #333;
+  border-radius: 25px;
+
+  text-align: center;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(6px);
+}
+
+
+.login-box input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 25px;
+
+  background: transparent;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+
+  font-size: 16px;
+  text-align: center;
+  color: black;
+
+  box-shadow:
+    0 0 12px rgba(101, 65, 92, 0.45);
+
+  transition: 0.3s;
+}
+
+.login-box input:focus {
+  box-shadow:
+    0 0 18px rgba(101, 65, 92, 0.7);
+}
+
+
+.login-box button {
+  padding: 12px 30px;
+
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 16px;
+
+  color: #65415c;
+  background: transparent;
+  border: 2px solid #65415c;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-box button:hover {
+  background-color: #65415c;
+  color: white;
+
+  box-shadow:
+    0 0 8px rgba(101, 65, 92, 0.6),
+    0 0 18px rgba(101, 65, 92, 0.6),
+    0 0 32px rgba(101, 65, 92, 0.5);
+
+  transform: translateY(-2px);
+}
+
+.login-box button:active {
+  transform: scale(0.96);
+}
+
+.toast-error {
+  position: fixed;
+  bottom: 2px;
+  left: 50%;
+
+  width: 100%;
+
+  transform: translateX(-50%) translateY(120px);
+
+  background: #ff4d4f;
+  color: white;
+
+  padding: 12px 24px;
+
+  text-align: center;
+  font-weight: 600;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+
+  animation:
+    slideUp 0.35s ease forwards,
+    shake 0.4s ease 0.35s,
+    fadeOut 0.3s ease 2.3s forwards;
+}
+@keyframes slideUp {
+  to {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  20% { transform: translateX(-48%) translateY(0); }
+  40% { transform: translateX(-52%) translateY(0); }
+  60% { transform: translateX(-49%) translateY(0); }
+  80% { transform: translateX(-51%) translateY(0); }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,145 @@
+.result-page {
+  position: fixed;
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-image: url("../assets/bekground.jpg");
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-card {
+  width: 360px;
+  padding: 34px 26px;
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+
+.result-title {
+  font-size: 26px;
+  font-weight: 900;
+  margin-bottom: 22px;
+  color: #6b21a8;
+}
+
+.circle-container {
+  position: relative;
+  width: 180px;
+  margin: 0 auto 28px;
+
+  transition: 0.35s;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #e5e7eb;
+  stroke-width: 12;
+}
+
+.circle-progress {
+  fill: none;
+  stroke: #8b5cf6;
+  stroke-width: 12;
+  stroke-linecap: round;
+
+  transform: rotate(-90deg);
+  transform-origin: center;
+
+  transition: stroke-dashoffset 0.8s ease;
+}
+
+.circle-text {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.percent {
+  font-size: 34px;
+  font-weight: 900;
+}
+
+.label {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.stats-box {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+
+.stat {
+  flex: 1;
+
+  background: rgb(51, 39, 43);
+  border-radius: 14px;
+  padding: 14px 10px;
+
+  text-align: center;
+
+  transition: 0.25s;
+  cursor: default;
+}
+
+.stat strong {
+  display: block;
+  font-size: 20px;
+}
+
+.stat p {
+  font-size: 13px;
+  margin: 0;
+}
+
+.stat.correct { color: #16a34a; }
+.stat.wrong { color: #dc2626; }
+.stat.total { color: #2563eb; }
+
+.result-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  flex: 1;
+  padding: 14px 0;
+
+  border-radius: 999px;
+  border: none;
+
+  font-weight: 800;
+  color: white;
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.btn.replay {
+  background: linear-gradient(135deg,#a855f7,#7c3aed);
+}
+
+.btn.home {
+  background: linear-gradient(135deg,#ec4899,#db2777);
+}
+
+.btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  filter: brightness(1.1);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+
