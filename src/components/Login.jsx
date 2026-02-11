@@ -9,7 +9,6 @@ export default function Login() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  // ✅ kalau quiz masih jalan → langsung lanjut
   useEffect(() => {
     const savedQuiz = localStorage.getItem(QUIZ_STATE_KEY);
 
