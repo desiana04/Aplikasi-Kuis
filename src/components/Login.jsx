@@ -1,16 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Login.css";
 
+const QUIZ_STATE_KEY = "quiz_state";
+
 export default function Login() {
+  const navigate = useNavigate();
+
   const [name, setName] = useState("");
   const [error, setError] = useState("");
-  const navigate = useNavigate();
+
+  useEffect(() => {
+    const savedName = localStorage.getItem("username");
+    const savedQuiz = localStorage.getItem(QUIZ_STATE_KEY);
+
+    if (savedName && savedQuiz) {
+      navigate("/quiz");
+      return;
+    }
+
+    if (savedName) {
+      setName(savedName);
+    }
+  }, []);
 
   const startQuiz = () => {
     if (!name.trim()) {
       setError("Masukkan nama dulu ya");
-
       setTimeout(() => setError(""), 2500);
       return;
     }
