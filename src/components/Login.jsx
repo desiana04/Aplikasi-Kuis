@@ -5,22 +5,16 @@ import "../styles/Login.css";
 const QUIZ_STATE_KEY = "quiz_state";
 
 export default function Login() {
-  const navigate = useNavigate();
-
   const [name, setName] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
+  // ✅ kalau quiz masih jalan → langsung lanjut
   useEffect(() => {
-    const savedName = localStorage.getItem("username");
     const savedQuiz = localStorage.getItem(QUIZ_STATE_KEY);
 
-    if (savedName && savedQuiz) {
+    if (savedQuiz) {
       navigate("/quiz");
-      return;
-    }
-
-    if (savedName) {
-      setName(savedName);
     }
   }, []);
 
